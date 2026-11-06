@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFG Eventos | Cadastrar evento</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mapa.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+</head>
+<body>
+
+    <header class="topo">
+        <div class="container">
+            <h1>IFG Eventos</h1>
+            <span>Painel administrativo</span>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="pagina">
+            <div class="titulo-pagina">
+                <h2>Cadastrar evento</h2>
+                <p>Preencha as informações para cadastrar um novo evento.</p>
+            </div>
+
+            <form id="form-evento" class="formulario">
+
+                <div class="campo">
+                    <label for="nome">Nome do evento</label>
+                    <input
+                        type="text"
+                        id="nome"
+                        name="nome"
+                        placeholder="Ex.: Jogos do IFG"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="descricao">Descrição</label>
+                    <textarea
+                        id="descricao"
+                        name="descricao"
+                        rows="4"
+                        placeholder="Descreva o evento..."
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="linha-campos">
+                    <div class="campo">
+                        <label for="data-inicio">Data de início</label>
+                        <input type="date" id="data-inicio" name="data-inicio" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="data-fim">Data de encerramento</label>
+                        <input type="date" id="data-fim" name="data-fim" required>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="local">Local do evento</label>
+
+                    <div class="localizacao">
+                        <input
+                            type="text"
+                            id="local"
+                            name="local"
+                            placeholder="Selecione a localização no mapa"
+                            readonly
+                        >
+
+                        <button type="button" id="abrir-mapa" class="botao-secundario">
+                            Selecionar no mapa
+                        </button>
+                    </div>
+
+                    <input type="hidden" id="latitude" name="latitude">
+                    <input type="hidden" id="longitude" name="longitude">
+                </div>
+
+                <div class="acoes">
+                    <button type="submit" class="botao-principal">
+                        Cadastrar evento
+                    </button>
+                </div>
+
+            </form>
+        </section>
+    </main>
+
+    <!-- Janela do mapa -->
+    <div id="modal-mapa" class="modal">
+        <div class="modal-conteudo">
+
+            <div class="modal-cabecalho">
+                <div>
+                    <h2>Selecionar localização</h2>
+                    <p>Escolha o local clicando no mapa.</p>
+                </div>
+
+                <button type="button" id="fechar-mapa" class="botao-fechar"
+                    aria-label="Fechar janela">
+                    &times;
+                </button>
+            </div>
+
+                <div id="mapa"></div>
+
+            <div class="modal-acoes">
+                <button type="button" id="cancelar-mapa" class="botao-secundario">
+                    Cancelar
+                </button>
+
+                <button type="button" id="confirmar-mapa" class="botao-principal" disabled>
+                    Confirmar localização
+                </button>
+            </div>
+
+        </div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

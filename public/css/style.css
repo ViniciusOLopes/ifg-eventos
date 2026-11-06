@@ -1,0 +1,181 @@
+
+/* Configurações gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f5;
+    color: #252525;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Cabeçalho */
+.topo {
+    background-color: #176b3a;
+    color: white;
+    padding: 20px 0;
+}
+
+.topo .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topo h1 {
+    font-size: 24px;
+}
+
+.topo span {
+    font-size: 14px;
+}
+
+/* Página */
+.pagina {
+    margin: 40px 0;
+}
+
+.titulo-pagina {
+    margin-bottom: 25px;
+}
+
+.titulo-pagina h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.titulo-pagina p {
+    color: #666;
+}
+
+/* Formulário */
+.formulario {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 22px;
+    flex: 1;
+}
+
+.campo label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    outline: none;
+    border-color: #176b3a;
+}
+
+.campo textarea {
+    resize: vertical;
+}
+
+.linha-campos {
+    display: flex;
+    gap: 20px;
+}
+
+/* Localização */
+.localizacao {
+    display: flex;
+    gap: 10px;
+}
+
+.localizacao input {
+    flex: 1;
+}
+
+/* Botões */
+.botao-principal,
+.botao-secundario {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.botao-principal {
+    background-color: #176b3a;
+    color: white;
+}
+
+.botao-principal:hover {
+    background-color: #10552d;
+}
+
+.botao-secundario {
+    background-color: #e8eee9;
+    color: #176b3a;
+}
+
+.botao-secundario:hover {
+    background-color: #d7e4da;
+}
+
+.botao-principal:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.acoes {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .topo .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .formulario {
+        padding: 20px;
+    }
+
+    .linha-campos {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .localizacao {
+        flex-direction: column;
+    }
+
+    .acoes .botao-principal {
+        width: 100%;
+    }
+}
